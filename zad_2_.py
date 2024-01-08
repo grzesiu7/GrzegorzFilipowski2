@@ -5,6 +5,7 @@ Created on Mon Nov 13 10:57:46 2023
 @author: student
 """
 
+
 class Library:
     def __init__(self, city, street, zip_code, open_hours, phone):
         self.city = city
@@ -14,11 +15,13 @@ class Library:
         self.phone = phone
 
     def __str__(self):
-        return f"Library: {self.city}, {self.street}, {self.zip_code}\nOpen hours: {self.open_hours}\nPhone: {self.phone}"
+        return (f"Library: {self.city}, {self.street}, {self.zip_code}"
+                f"\nOpen hours: {self.open_hours}\nPhone: {self.phone}")
 
 
 class Employee:
-    def __init__(self, first_name, last_name, hire_date, birth_date, city, street, zip_code, phone):
+    def __init__(self, first_name, last_name, hire_date,
+                 birth_date, city, street, zip_code, phone):
         self.first_name = first_name
         self.last_name = last_name
         self.hire_date = hire_date
@@ -29,8 +32,11 @@ class Employee:
         self.phone = phone
 
     def __str__(self):
-        return f"Employee: {self.first_name} {self.last_name}\nHire date: {self.hire_date}\nBirth date: {self.birth_date}\n" \
-               f"Address: {self.city}, {self.street}, {self.zip_code}\nPhone: {self.phone}"
+        return (f"Employee: {self.first_name} {self.last_name}\nHire date: "
+                f"{self.hire_date}\nBirth date: {self.birth_date}\n" ) \
+               (f"Address: {self.city}, "
+                f"{self.street}, {self.zip_code}\nPhone: "
+                f"{self.phone}")
 
 
 class Student:
@@ -43,7 +49,8 @@ class Student:
 
 
 class Book:
-    def __init__(self, library, publication_date, author_name, author_surname, number_of_pages):
+    def __init__(self, library, publication_date, author_name,
+                 author_surname, number_of_pages):
         self.library = library
         self.publication_date = publication_date
         self.author_name = author_name
@@ -51,7 +58,8 @@ class Book:
         self.number_of_pages = number_of_pages
 
     def __str__(self):
-        return f"Book: {self.author_name} {self.author_surname}\nPublished: {self.publication_date}\n" \
+        return (f"Book: {self.author_name} {self.author_surname}\n"
+                f"Published: {self.publication_date}\n") \
                f"Pages: {self.number_of_pages}\n{self.library}"
 
 
@@ -64,16 +72,25 @@ class Order:
 
     def __str__(self):
         book_list = "\n".join([f"{book}" for book in self.books])
-        return f"Order by {self.employee.first_name} {self.employee.last_name} for {self.student.first_name} {self.student.last_name}\n" \
+        return (f"Order by {self.employee.first_name} "
+                f"{self.employee.last_name} "
+                f"for {self.student.first_name} "
+                f"{self.student.last_name}\n") \
                f"Order date: {self.order_date}\nBooks:\n{book_list}"
 
 
 # Tworzenie przykładowych obiektów
-library1 = Library("City1", "Street1", "12345", "9:00 AM - 5:00 PM", "123-456-789")
-library2 = Library("City2", "Street2", "67890", "10:00 AM - 6:00 PM", "987-654-321")
+library1 = (Library
+            ("City1", "Street1", "12345", "9:00 AM - 5:00 PM", "123-456-789"))
+library2 = (Library
+            ("City2", "Street2", "67890", "10:00 AM - 6:00 PM", "987-654-321"))
 
-employee1 = Employee("Dominika", "Dzida", "2023-01-01", "1990-05-15", "City1", "Street1", "12345", "555-111-222")
-employee2 = Employee("Michał", "Latosiński", "2023-02-01", "1985-08-20", "City2", "Street2", "67890", "111-222-333")
+employee1 = Employee(
+    "Dominika", "Dzida",
+    "2023-01-01", "1990-05-15", "City1", "Street1", "12345", "555-111-222")
+employee2 = Employee(
+    "Michał", "Latosiński",
+    "2023-02-01", "1985-08-20", "City2", "Street2", "67890", "111-222-333")
 
 student1 = Student("Grzegorz", "Filipowski")
 student2 = Student("Jakub", "Jasiołek")
