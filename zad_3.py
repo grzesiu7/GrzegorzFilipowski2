@@ -5,8 +5,10 @@ Created on Mon Nov  6 12:23:02 2023
 @author: student
 """
 
+
 def is_even(number):
     return number % 2 == 0
+
 
 # Przykład użycia funkcji
 num = 8
